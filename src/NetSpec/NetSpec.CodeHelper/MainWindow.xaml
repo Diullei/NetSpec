@@ -1,0 +1,9 @@
+﻿<Window x:Class="NetSpec.CodeHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NetSpec - CodeHelper" Height="522" Width="645">
+    <Grid Background="#FFEFEFEF">
+        <RichTextBox Height="209" Margin="12,12,12,0" Name="txtSpecification" VerticalAlignment="Top" TextChanged="txtSpecification_TextChanged" AcceptsTab="True" Paragraph.LineHeight="0.5" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
+        <RichTextBox Margin="12,227,12,12" Name="txtCode" FontFamily="Courier New" IsEnabled="True" Background="White" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
+    </Grid>
+</Window>

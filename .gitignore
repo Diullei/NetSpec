@@ -1,0 +1,13 @@
+src/NetSpec/_ReSharper.NetSpec
+src/NetSpec/TestResults
+src/NetSpec/NetSpec.TestProject/bin
+src/NetSpec/NetSpec.TestProject/obj
+src/NetSpec/NetSpec.Core/bin
+src/NetSpec/NetSpec.Core/obj/Debug
+src/NetSpec/NetSpec.5.0.ReSharper.user
+src/NetSpec/NetSpec.Demo.ConnectionX.TestProject/bin
+src/NetSpec/NetSpec.CodeHelper.TestProject/bin/
+src/NetSpec/NetSpec.CodeHelper.TestProject/obj
+src/NetSpec/NetSpec.CodeHelper/bin
+src/NetSpec/NetSpec.CodeHelper/obj
+src/NetSpec/NetSpec.Demo.ConnectionX.TestProject/obj/

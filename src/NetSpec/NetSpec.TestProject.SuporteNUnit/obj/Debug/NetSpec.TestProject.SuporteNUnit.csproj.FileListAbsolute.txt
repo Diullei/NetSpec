@@ -1,0 +1,8 @@
+C:\NetSpec\src\NetSpec\NetSpec.TestProject.SuporteNUnit\bin\Debug\NetSpec.TestProject.SuporteNUnit.dll
+C:\NetSpec\src\NetSpec\NetSpec.TestProject.SuporteNUnit\bin\Debug\NetSpec.TestProject.SuporteNUnit.pdb
+C:\NetSpec\src\NetSpec\NetSpec.TestProject.SuporteNUnit\bin\Debug\NetSpec.Core.dll
+C:\NetSpec\src\NetSpec\NetSpec.TestProject.SuporteNUnit\bin\Debug\nunit.framework.dll
+C:\NetSpec\src\NetSpec\NetSpec.TestProject.SuporteNUnit\bin\Debug\NetSpec.Core.pdb
+C:\NetSpec\src\NetSpec\NetSpec.TestProject.SuporteNUnit\obj\Debug\ResolveAssemblyReference.cache
+C:\NetSpec\src\NetSpec\NetSpec.TestProject.SuporteNUnit\obj\Debug\NetSpec.TestProject.SuporteNUnit.dll
+C:\NetSpec\src\NetSpec\NetSpec.TestProject.SuporteNUnit\obj\Debug\NetSpec.TestProject.SuporteNUnit.pdb
