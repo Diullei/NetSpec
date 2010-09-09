@@ -6,6 +6,6 @@ The NetSpec is a tool that aims to make textual specifications into executable s
 For more info please contact the team:
 
   Diullei Gomes 
-      twitter.com/diullei
-	  www.diullei.com
-	  diullei@gmail.com
+  *twitter.com/diullei*
+  *www.diullei.com*
+  *diullei@gmail.com*
