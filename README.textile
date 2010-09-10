@@ -2,54 +2,6 @@ h2. NetSpec - A free tool for using BDD with natural language in .Net
 
 The NetSpec is a tool that aims to make textual specifications into executable specifications. This is a simple dll developed with the Framework.NET 4.0 which when added to your test project makes their experiences in applying TDD, BDD and ATDD very interesting. The NetSpec allows us to use our own natural language to write specifications.
 
-*A small exemple*
-
-Given the specification:
-
-```text
-To test a calculator when I input the value 4 and the value 3, the calculator should return the value 7
-```
-
-Implementing...
-
-```c#
-[TestClass]
-public class DemoCalculatorTest
-{
-    private int _result;
-
-    [TestMethod]
-    public void TestingSum()
-    {
-        const string specification = @"
-To test a calculator 
-    when I input the value 4 and the value 3 
-    the calculator should return the value 7
-       ";
-
-        SpecificationBuilder.Builder(specification).TryExecute(this);
-    }
-
-    public void WhenIInputTheValue_AndTheValue_(int firstValue, int secondValue)
-    {
-        _result = firstValue + secondValue;
-    }
-
-    public void TheCalculatorShouldReturnTheValue_(int result)
-    {
-        Assert.AreEqual(result, _result);
-    }
-}
-```
-
-We have the following report:
-
-```text
-To test a calculator 
-    when I input the value 4 and the value 3 --> #Passed
-    the calculator should return the value 7 --> #Passed
-```
-
 For more info please contact the team:
 
 Diullei Gomes
