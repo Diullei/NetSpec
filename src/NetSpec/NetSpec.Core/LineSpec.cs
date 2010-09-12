@@ -58,7 +58,7 @@ namespace NetSpec.Core
         /// <summary>
         /// Retornando a string numa forma normalizada.
         /// </summary>
-        private string AnNormalizedSpecificationLine
+        public string AnNormalizedSpecificationLine
         {
             get { return _anSpecificationLine.Trim(); }
         }

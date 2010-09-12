@@ -35,7 +35,7 @@ namespace NetSpec.CodeHelper
                     .ForEach(execL =>
                     {
                         code.AppendLine();
-                        code.AppendLine(string.Format("    public void {0}()", ConvertToPascalCase(execL.Text)));
+                        code.AppendLine(string.Format("    public void {0}()", ConvertToPascalCase(execL.AnNormalizedSpecificationLine)));
                         code.AppendLine("    {");
                         code.AppendLine("        throw new NotImplementedException();");
                         code.AppendLine("    }");
