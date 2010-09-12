@@ -11,6 +11,12 @@
     /// </summary>
     public class Specification
     {
+        #region " private Fields "
+
+        private ConsoleLog _consoleLog;
+        
+        #endregion        
+
         #region " Properties "
         
         /// <summary>
@@ -28,27 +34,36 @@
         /// <param name="instance"></param>
         public Report TryExecute(object instance)
         {
-            var consoleLog = new ConsoleLog(LineSpecCollection.ToList().Select(x => x.Text).ToList().GetLongestString().Length);
-            var listException = new List<Exception>();
+            RealTimeConsoleLogInitialize();
 
             LineSpecCollection.ToList().ForEach(line =>
             {
                 try
                 {
-                    instance.GetType().GetMethods().ToList().ForEach(m => line.TryExecute(m, instance));
+                    TryExecuteLine(instance, line);
                 }
                 catch (Exception ex)
                 {
-                    listException.Add(ex.InnerException ?? ex);
+                    _consoleLog.AddException(ex.InnerException);
                 }
 
-                consoleLog.WriteLogToLine(line, listException.Count);
+                _consoleLog.WriteLogToLine(line);
             });
 
-            consoleLog.WriteExceptionConsoleLog(listException);
+            _consoleLog.WriteExceptionConsoleLog();
             AssertTest();
 
             return new Report();
+        }
+
+        private void RealTimeConsoleLogInitialize()
+        {
+            _consoleLog = new ConsoleLog(LineSpecCollection);
+        }
+
+        private void TryExecuteLine(object instance, LineSpec line)
+        {
+            instance.GetType().GetMethods().ToList().ForEach(m => line.TryExecute(m, instance));
         }
 
         private void AssertTest()

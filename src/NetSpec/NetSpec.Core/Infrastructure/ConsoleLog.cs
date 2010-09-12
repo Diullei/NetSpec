@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using NetSpec.Core.Ext;
 
 namespace NetSpec.Core.Infrastructure
@@ -7,32 +8,33 @@ namespace NetSpec.Core.Infrastructure
     public class ConsoleLog
     {
         private readonly int _maxLineSpecLength;
+        private IList<Exception> _exceptionList = new List<Exception>();
 
-        public ConsoleLog(int maxLineSpecLength)
+        public ConsoleLog(IEnumerable<LineSpec> lineSpecCollection)
         {
-            _maxLineSpecLength = maxLineSpecLength;
+            _maxLineSpecLength = lineSpecCollection.ToList().Select(x => x.Text).ToList().GetLongestString().Length;
         }
 
-        public void WriteExceptionConsoleLog(IList<Exception> listException)
+        public void WriteExceptionConsoleLog()
         {
-            if (listException.Count > 0)
+            if (_exceptionList.Count > 0)
             {
                 Console.Out.WriteLine("=".Repeat(_maxLineSpecLength + 14));
             }
 
-            for (var i = 0; i < listException.Count; i++)
+            for (var i = 0; i < _exceptionList.Count; i++)
             {
-                Console.Out.WriteLine(string.Format("[{0}] {1}{2}{3}{2}", i + 1, listException[i].Message, Environment.NewLine, listException[i].StackTrace));
+                Console.Out.WriteLine(string.Format("[{0}] {1}{2}{3}{2}", i + 1, _exceptionList[i].Message, Environment.NewLine, _exceptionList[i].StackTrace));
             }
         }
 
-        public void WriteLogToLine(LineSpec lineSpec, int exceptionIndex)
+        public void WriteLogToLine(LineSpec lineSpec)
         {
             if (lineSpec.IsExecutableLine())
             {
                 WriteLogToPendingLine(lineSpec);
                 WriteLogToExecutedLine(lineSpec);
-                WriteLogToFailLine(lineSpec, exceptionIndex);
+                WriteLogToFailLine(lineSpec, _exceptionList.Count);
             }
             else
             {
@@ -62,6 +64,11 @@ namespace NetSpec.Core.Infrastructure
             {
                 Logger.WriteLine(string.Format(" {0}> #Fail [{1}]", "-".Repeat(_maxLineSpecLength + 2 - lineSpec.Text.Length), exceptionIndex));
             }
+        }
+
+        public void AddException(Exception exception)
+        {
+            _exceptionList.Add(exception);
         }
     }
 }
