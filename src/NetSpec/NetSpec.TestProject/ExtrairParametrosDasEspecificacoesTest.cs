@@ -142,12 +142,12 @@ Parâmetros de data
             throw new Exception();
         }
     }
- 
+
     public class CustomZeroUmConvert : IParameterConvert
     {
         public bool Accept(Parameter parameter)
         {
-            return parameter.ParameterInfo.ParameterType == typeof(bool) 
+            return parameter.ParameterInfo.ParameterType == typeof(bool)
                 && (parameter.Value == "1" || parameter.Value == "0");
         }
 

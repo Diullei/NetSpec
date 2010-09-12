@@ -10,7 +10,7 @@ namespace NetSpec.TestProject
     public class StringExtTest
     {
         #region " StartWithWhiteSpace "
-        
+
         [TestMethod]
         public void StartWithWhiteSpaceTest1()
         {
