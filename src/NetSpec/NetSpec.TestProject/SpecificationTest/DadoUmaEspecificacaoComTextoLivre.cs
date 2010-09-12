@@ -59,60 +59,6 @@
             Assert.AreEqual(UmRelatórioParaEspecificaçãoExecutadaComSucesso, log.ToString());
         }
 
-        /// <summary>
-        /// este teste precisará ser refatorado!
-        /// </summary>
-        [TestMethod]
-        public void Deve_RetornarUmRelatórioEmFormatoConsoleIndicandoUmItemPendente()
-        {
-            // Arrange
-            var log = new StringWriter();
-            Console.SetOut(log);
-            var spec = @"
-Para testar uma calculadora
-    quando eu informo o valor 4 e o valor 3
-    deve me retornar o valor 7
-    um item inexistente
-";
-
-            // Act
-            _umObjetoSpecification = SpecificationBuilder.Builder(spec);
-            
-            try
-            {
-                _umObjetoSpecification.TryExecute(this);
-            }
-            catch (Exception)
-            {
-            }
-
-            // Assert
-            Assert.AreEqual(UmRelatórioParaEspecificaçãoComItensPendentes, log.ToString());
-        }
-
-        //TODO: é preciso aplicar expressão regular para comparar o trace de exceção.
-        [TestMethod]
-        public void Deve_RetornarUmRelatórioEmFormatoConsoleIndicandoQueTodosOsItensFalharam()
-        {
-            // Arrange
-            var log = new StringWriter();
-            Console.SetOut(log);
-
-            // Act
-            _flagParaFalharTodasAsTarefas = true;
-
-            try
-            {
-                _umObjetoSpecification.TryExecute(this);
-            }
-            catch (Exception)
-            {
-            } 
-
-            // Assert
-            //Assert.AreEqual(UmRelatórioParaEspecificaçãoComFalhaEmTodosOsItens, log.ToString());
-            Assert.Inconclusive();
-        }
         #endregion
 
         #region " Campos Privados "
@@ -129,27 +75,6 @@ Para testar uma calculadora
 Para testar uma calculadora
     quando eu informo o valor 4 e o valor 3 --> #Passed
     deve me retornar o valor 7 ---------------> #Passed
-
-";
-        private const string UmRelatórioParaEspecificaçãoComItensPendentes = @"
-Para testar uma calculadora
-    quando eu informo o valor 4 e o valor 3 --> #Passed
-    deve me retornar o valor 7 ---------------> #Passed
-    um item inexistente ----------------------> #Pending
-
-";
-
-        private const string UmRelatórioParaEspecificaçãoComFalhaEmTodosOsItens = @"
-Para testar uma calculadora
-    quando eu informo o valor 4 e o valor 3 --> #Fail [1]
-    deve me retornar o valor 7 ---------------> #Fail [2]
-
-=========================================================
-[1] Exception of type 'System.Exception' was thrown.
-   at NetSpec.TestProject.SpecificationTest.DadoUmaEspecificaçãoComTextoLivre.QuandoEuInformoOValor_EOValor_(Int32 primeiroValor, Int32 segundoValor) in C:\NetSpec\src\NetSpec\NetSpec.TestProject\SpecificationTest\DadoUmaEspecificacaoComTextoLivre.cs:line 189
-
-[2] Exception of type 'System.Exception' was thrown.
-   at NetSpec.TestProject.SpecificationTest.DadoUmaEspecificaçãoComTextoLivre.DeveMeRetornarOValor_(Int32 resultado) in C:\NetSpec\src\NetSpec\NetSpec.TestProject\SpecificationTest\DadoUmaEspecificacaoComTextoLivre.cs:line 196
 
 ";
 

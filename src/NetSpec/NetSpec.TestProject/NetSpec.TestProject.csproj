@@ -62,7 +62,9 @@
     <Compile Include="LineSpecTest\DadoUmaLinhaExecutavelSemParametros.cs" />
     <Compile Include="MethodSpecTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecificationTest\DadaUmaEspecificaçãoComFalhaEmTodosOsItens.cs" />
     <Compile Include="SpecificationTest\DadaUmaEspecificaçãoComQuebrasDeLinhasContinuas.cs" />
+    <Compile Include="SpecificationTest\DadaUmaEspecificaçãoComUmItemPendente.cs" />
     <Compile Include="SpecificationTest\DadoUmaEspecificacaoComTextoLivre.cs" />
     <Compile Include="StringExtTest.cs" />
   </ItemGroup>

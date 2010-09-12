@@ -1,12 +1,10 @@
-﻿using System.Reflection;
-using NetSpec.Core.Infrastructure;
-using NetSpec.Core.Infrastructure.ParameterConvert;
-
-namespace NetSpec.TestProject
+﻿namespace NetSpec.TestProject
 {
     using System;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Core;
+    using Core.Infrastructure;
+    using Core.Infrastructure.ParameterConvert;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class ExtrairParametrosDasEspecificacoesTest

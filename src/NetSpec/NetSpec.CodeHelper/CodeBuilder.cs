@@ -21,7 +21,7 @@ namespace NetSpec.CodeHelper
             code.AppendLine("    [TestMethod]");
             code.AppendLine("    public void StartTest()");
             code.AppendLine("    {");
-            code.AppendLine("        const string specification = @\"");
+            code.Append("        const string specification = @\"");
             code.Append(specification);
             code.AppendLine("\";");
             code.AppendLine();
@@ -37,7 +37,7 @@ namespace NetSpec.CodeHelper
                         code.AppendLine();
                         code.AppendLine(string.Format("    public void {0}()", ConvertToPascalCase(execL.Text)));
                         code.AppendLine("    {");
-                        code.AppendLine("        // TODO: implement test...");
+                        code.AppendLine("        throw new NotImplementedException();");
                         code.AppendLine("    }");
                     });
 

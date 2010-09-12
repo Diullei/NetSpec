@@ -27,7 +27,7 @@ namespace NetSpec.CodeHelper
         private void txtSpecification_TextChanged(object sender, TextChangedEventArgs e)
         {
             var myFlowDoc = new FlowDocument();
-            var textSpecification = new TextRange(txtSpecification.Document.ContentStart, txtSpecification.Document.ContentEnd).Text;            
+            var textSpecification = new TextRange(txtSpecification.Document.ContentStart, txtSpecification.Document.ContentEnd).Text;
 
             var code = CodeBuilder.Builder(textSpecification, "NetSpecTestClass");
             myFlowDoc.Blocks.Add(new Paragraph(new Run(code)));

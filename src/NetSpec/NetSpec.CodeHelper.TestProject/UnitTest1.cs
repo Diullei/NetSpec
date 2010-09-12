@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NetSpec.Core;
 
 namespace NetSpec.CodeHelper.TestProject
@@ -33,15 +34,15 @@ Para testar uma calculadora
 
     public void QuandoEuInformoOValor4EOValor3()
     {
-        // TODO: implement test...
+        throw new NotImplementedException();
     }
 
     public void DeveMeRetornarOValor7()
     {
-        // TODO: implement test...
+        throw new NotImplementedException();
     }
 }";
-
+            
             // Act
             var code = CodeBuilder.Builder(specification, "NetSpecTestClass");
 

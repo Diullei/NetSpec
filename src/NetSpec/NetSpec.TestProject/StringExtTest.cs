@@ -6,12 +6,6 @@ namespace NetSpec.TestProject
     using Core.Ext;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    // ver problema de mais de um espaço!!!
-    // ocorrencias repetidas no interior de strings
-    // implementar config para valores booleanos
-    // implementar config para valores monetários e datas
-    // problema de palavra capitalizada na especificação
-
     [TestClass]
     public class StringExtTest
     {
@@ -159,16 +153,16 @@ namespace NetSpec.TestProject
             Assert.AreEqual("Um Texto Em Camel Case", str.SplitCamelCase());
         }
 
-        [TestMethod]
-        public void SplitCamelCaseTest2()
-        {
-            // Arrange
-            const string str = "UmTextoEmCamelCase e uma palavra sByte";
+        // ver se esse teste será realmente necessário...
+        //[TestMethod]
+        //public void SplitCamelCaseTest2()
+        //{
+        //    // Arrange
+        //    const string str = "UmTextoEmCamelCase e uma palavra sByte";
 
-            // Assert
-            //Assert.AreEqual("Um Texto Em Camel Case e uma palavra sByte", str.SplitCamelCase());
-            Assert.Inconclusive();
-        }
+        //    // Assert
+        //    Assert.AreEqual("Um Texto Em Camel Case e uma palavra sByte", str.SplitCamelCase());
+        //}
 
         [TestMethod]
         public void SplitCamelCaseTest3()
@@ -181,19 +175,5 @@ namespace NetSpec.TestProject
         }
 
         #endregion
-
-//        [TestMethod]
-//        public void TesteMultiLine()
-//        {
-//            var _especificação = @"
-//Partindo do princípio que 
-//    não exista um usuário cadastrado com o nome nome.valido, 
-//        > o email um.email.valido@email.email,
-//        > o apelido um.apelido.valido
-//        > e com a data de nascimento 2/9/1982
-//    ";
-
-//            new Specification(_especificação).TryExecute(this);
-//        }
     }
 }
